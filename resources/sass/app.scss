@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+    @apply rounded-md leading-tight px-4 py-2;
+}
+.btn-default {
+    @apply border border-gray-500;
+}
+.btn-primary {
+    @apply text-white bg-blue-500 border-blue-500 hover:bg-blue-400 hover:border-blue-400;
+}
+.btn-secondary {
+    @apply text-white bg-green-500 border-green-500 hover:bg-green-400 hover:border-green-400;
+}
+
+.btn:disabled,
+.btn-default:disabled,
+.btn-primary:disabled,
+.btn-secondary:disabled {
+    @apply opacity-75;
+}

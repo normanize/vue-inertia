@@ -1,14 +1,12 @@
 <template>
-  <Head title="Login" />
-  <div>login page</div>
+    <Titlebar title="Login" />
 </template>
 <script>
-import { Link } from "@inertiajs/inertia-vue3";
-import Head from "@/Components/Head";
+import Titlebar from "@/Components/Common/Titlebar/Index";
 export default {
-  mounted() {
-    console.log("login page mounted.");
-  },
-  components: { Head, Link },
+    mounted() {
+        console.log("login page mounted.");
+    },
+    components: { Titlebar },
 };
 </script>

@@ -1,6 +1,8 @@
-const mix = require('laravel-mix');
-const path = require('path');
-const webpackConfig = require('./webpack.config')
+const mix = require("laravel-mix");
+const path = require("path");
+const webpackConfig = require("./webpack.config");
+const tailwindcss = require("tailwindcss");
+const svgVue = require("laravel-mix-svg-vue");
 
 /*
  |--------------------------------------------------------------------------
@@ -13,13 +15,17 @@ const webpackConfig = require('./webpack.config')
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js("resources/js/app.js", "public/js")
     .vue()
+    .svgVue()
     .webpackConfig(webpackConfig)
-    .postCss('resources/css/app.css', 'public/css', [
-        require("tailwindcss"),
-    ]);
+    .sass("resources/sass/app.scss", "public/css")
+    .options({
+        postCss: [tailwindcss("./tailwind.config.js")],
+    });
 
 mix.alias({
-    ziggy: path.resolve('vendor/tightenco/ziggy/dist/vue'),
+    ziggy: path.resolve("vendor/tightenco/ziggy/dist/vue"),
 });
+
+mix.disableSuccessNotifications();
