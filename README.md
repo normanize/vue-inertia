@@ -7,5 +7,5 @@ Laravel + VueJS 3 + Inertia
 # Installation  
 
 $ composer install  
-$ npm install
-$ npm run dev
+$ npm install  
+$ npm run dev  
